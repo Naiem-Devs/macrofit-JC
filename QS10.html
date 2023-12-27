@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Bootstrap CSS -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="assets/css/all.min.css" rel="stylesheet" />
+		<link href="assets/css/fontawesome.css" rel="stylesheet" />
+		<link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+		<link href="assets/css/aos.css" rel="stylesheet" />
+		<link href="assets/css/nice-select.css" rel="stylesheet" />
+		<link href="assets/css/default.css" rel="stylesheet" />
+		<link href="assets/css/style.css" rel="stylesheet" />
+		<link href="assets/css/responsive.css" rel="stylesheet" />
+
+		<title>Hello, world!</title>
+	</head>
+
+	<body>
+		<div
+			class="macrofit__main__area height__full"
+			style="background-image: url(./assets/img/page__bg.png)"
+		>
+			<!-- =================== MACROFIT APP AREA START ===================== -->
+			<section class="macrofit__app__area">
+				<div class="container">
+					<div class="macrofit__top__logo__area">
+						<div class="macrofit__back__ico">
+							<a href="#"><i class="far fa-angle-left"></i></a>
+						</div>
+						<div class="macrofit__logo">
+							<a href="#"><img src="assets/img/logo.svg" alt="" /></a>
+						</div>
+					</div>
+
+					<div class="macrofit__step__wrapper">
+						<div class="macrofit__step__wrapper">
+							<div class="macrofit__step__blk step_nine">
+								<span><img src="assets/img/range__stape.svg" alt="" /></span>
+								<span><img src="assets/img/range__stape.svg" alt="" /></span>
+								<span><img src="assets/img/range__stape.svg" alt="" /></span>
+								<span><img src="assets/img/range__stape.svg" alt="" /></span>
+								<span><img src="assets/img/range__stape.svg" alt="" /></span>
+								<span><img src="assets/img/range__stape.svg" alt="" /></span>
+								<span><img src="assets/img/range__stape.svg" alt="" /></span>
+								<span
+									><img src="assets/img/range__last__stape.svg" alt=""
+								/></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="lose__fat__area">
+						<div class="similar__content text-center">
+							<h4 class="mb-30">
+								Do your happy dance! You finished your baseline questionnaire!
+							</h4>
+							<h4>
+								Sit Tight While We Calculate Your Week 1 Macro Point Budget...
+							</h4>
+						</div>
+
+						<div class="lose__btn__blk common__btn">
+							<div class="progress-bar-wrap mt-60 mb-50" data-progress="100">
+								<div class="progress-bar" id="myProgressBar">
+									<div class="dot-line"></div>
+								</div>
+								<div class="marker"><span class="progress-text">100</span>%</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="wait__lose__people">
+						<div class="similar__content text-center flex_p">
+							<p>
+								Our software uses a special formula that determines Macro Points
+								based on your questionnaire responses. All foods are assigned
+								Macro Points and you use your Macro Point budget to select
+								snacks, meal prep recipes, and restaurant options!
+							</p>
+							<p>
+								Our Macro Point (MP) system is the magic sauce to all of the
+								phenomenal Macrofit transformations you see. It’s simple, pick
+								the foods that fit your Macro Point budget, stick to your plan,
+								and get the results! 🙌
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =================== MACROFIT APP AREA END ===================== -->
+
+			<!-- Modal -->
+			<div
+				class="modal fade"
+				id="exampleModal"
+				tabindex="-1"
+				aria-labelledby="exampleModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content bg-transparent border-0">
+						<div class="modal-body pupup__body__blk">
+							<div class="popup__content__blk">
+								<p>
+									Thank you so much for sharing that! Answering these questions
+									will help us determine your weekly Macro Point budget!
+								</p>
+								<div class="popup__button">
+									<a data-bs-dismiss="modal" href="#">Okay</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Optional JavaScript; choose one of the two! -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/popper.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/owl.carousel.min.js"></script>
+		<script src="assets/js/jquery.nice-select.min.js"></script>
+		<script src="assets/js/aos.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			function updateProgressBar() {
+				$(".progress-bar-wrap").each(function () {
+					var progress = $(this).data("progress");
+					var progressBar = $(this).find(".progress-bar");
+					var dotLine = progressBar.find(".dot-line");
+					var marker = $(this).find(".marker");
+
+					marker.find(".progress-text").text(progress);
+
+					// Reset progress bar
+					dotLine.width(0 + "%");
+					marker.css("left", 0 + "%");
+
+					var currentProgress = 0;
+					var interval = setInterval(function () {
+						currentProgress += 2;
+						dotLine.width(currentProgress + "%");
+						marker.css("left", currentProgress + "%");
+
+						if (currentProgress >= progress) {
+							clearInterval(interval);
+						}
+					}, 100);
+				});
+			}
+
+			updateProgressBar();
+
+			// function simulateProgress() {
+			// 	var progressBar = $("#myProgressBar");
+			// 	var dotLine = progressBar.find(".dot-line");
+
+			// 	// Reset progress bar
+			// 	dotLine.width(0);
+
+			// 	var progress = 0;
+			// 	var interval = setInterval(function () {
+			// 		progress += 2;
+			// 		dotLine.width(progress + "%");
+
+			// 		if (progress >= 100) {
+			// 			clearInterval(interval);
+			// 		}
+			// 	}, 100);
+			// }
+
+			// simulateProgress();
+		</script>
+	</body>
+</html>

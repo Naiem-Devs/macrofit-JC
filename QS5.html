@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Bootstrap CSS -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="assets/css/all.min.css" rel="stylesheet" />
+		<link href="assets/css/fontawesome.css" rel="stylesheet" />
+		<link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+		<link href="assets/css/default.css" rel="stylesheet" />
+		<link href="assets/css/mobiscroll.javascript.min.css" rel="stylesheet" />
+		<link href="assets/css/style.css" rel="stylesheet" />
+		<link href="assets/css/responsive.css" rel="stylesheet" />
+
+		<title>Hello, world!</title>
+	</head>
+
+	<body>
+		<div class="macrofit__main__area height__full" style="background-image: url(./assets/img/page__bg.png)">
+			<!-- =================== MACROFIT APP AREA START ===================== -->
+			<section class="macrofit__app__area">
+				<div class="container">
+					<div class="macrofit__top__logo__area">
+						<div class="macrofit__back__ico">
+							<a href="#"><i class="far fa-angle-left"></i></a>
+						</div>
+						<div class="macrofit__logo">
+							<a href="#"><img src="assets/img/logo.svg" alt="" /></a>
+						</div>
+					</div>
+
+					<div class="macrofit__step__wrapper">
+						<div class="macrofit__step__blk step_five">
+							<span><img src="assets/img/range__stape.svg" alt="" /></span>
+							<span><img src="assets/img/range__stape.svg" alt="" /></span>
+							<span><img src="assets/img/range__stape.svg" alt="" /></span>
+							<span><img src="assets/img/range__stape.svg" alt="" /></span>
+							<span><img src="assets/img/range__stape.svg" alt="" /></span>
+							<span><img src="assets/img/range__stape.svg" alt="" /></span>
+							<span><img src="assets/img/range__stape.svg" alt="" /></span>
+							<span
+								><img src="assets/img/range__last__stape.svg" alt=""
+							/></span>
+						</div>
+					</div>
+
+					<div class="lose__fat__area">
+						<div class="similar__content">
+							<h4>What’s your date of birth?</h4>
+						</div>
+
+						<div class="datepicker"></div>
+						<div class="lose__btn__blk common__btn">
+							<div class="input-wrap">
+								<input
+									type="text"
+									placeholder="Date of Birth"
+									id="input-date"
+								/>
+								<label for="input-date"
+									><img src="assets/img/calendar_ico.svg" alt="" /> Date of
+									Birth</label
+								>
+							</div>
+							<a class="next_btn" href="QS6.html">Next</a>
+						</div>
+					</div>
+
+					<div class="wait__lose__people">
+						<div class="wait__lose__thumb wait__lose__thumb_extra_width">
+							<img src="assets/img/fat_to_fit_thumb_4.png" alt="" />
+							<div
+								class="wait_lose_badges"
+								style="background-image: url(./assets/img/badge_bg.png)"
+							>
+								<h6>54 <span>lbs</span></h6>
+								<p>down!</p>
+							</div>
+						</div>
+						<div class="similar__content text-center flex_p">
+							<p>
+								<span><img src="assets/img/quot_ico.svg" alt="" /></span>OMG!!!
+								I love this plan! It’s so easy and the food is amazing!
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =================== MACROFIT APP AREA END ===================== -->
+
+		</div>
+
+		<!-- Optional JavaScript; choose one of the two! -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/popper.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/owl.carousel.min.js"></script>
+		<script src="assets/js/mobiscroll.javascript.min.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script>
+			mobiscroll.setOptions({
+				locale: mobiscroll.localeEn, // Specify language like: locale: mobiscroll.localePl or omit setting to use default
+				theme: "ios", // Specify theme like: theme: 'ios' or omit setting to use default
+				themeVariant: "light", // More info about themeVariant: https://docs.mobiscroll.com/5-28-0/javascript/datetime#opt-themeVariant
+			});
+
+			mobiscroll.datepicker("#input-date", {
+				controls: ["date"],
+				// display: 'inline',
+				touchUi: true,
+				buttons: [
+					{
+						text: "Close",
+						handler: "cancel",
+					},
+				],
+				responsive: {
+					xsmall: {
+						touchUi: true,
+					},
+				},
+			});
+
+			mobiscroll.datepicker("#demo-anchored", {
+				controls: ["date"],
+				display: "anchored", // Specify display mode like: display: 'bottom' or omit setting to use default
+
+				responsive: {
+					xsmall: {
+						controls: ["date"],
+						display: "bottom",
+						touchUi: true,
+					},
+				},
+			});
+
+			mobiscroll.datepicker("#demo-top", {
+				controls: ["date"],
+				display: "top", // Specify display mode like: display: 'bottom' or omit setting to use default
+			});
+
+			mobiscroll.datepicker("#demo-bottom", {
+				controls: ["date"],
+				display: "bottom", // Specify display mode like: display: 'bottom' or omit setting to use default
+			});
+
+			mobiscroll.datepicker("#demo-center", {
+				controls: ["date"],
+				display: "center", // Specify display mode like: display: 'bottom' or omit setting to use default
+			});
+		</script>
+
+		<script>
+			var $controls = $(".control");
+
+			$controls.on("click", function () {
+				var $this = $(this),
+					$container = $this.closest(".input-container"),
+					$currentInput = $container.find("input"),
+					currentValue = parseInt($currentInput.val()),
+					value = currentValue,
+					minValue = parseInt($currentInput.attr("min"));
+				if ($this.hasClass("increase")) {
+					value = ++currentValue;
+				}
+				if ($this.hasClass("decrease") && currentValue > minValue) {
+					value = --currentValue;
+				}
+				$currentInput.val(value);
+			});
+		</script>
+	</body>
+</html>
